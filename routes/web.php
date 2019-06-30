@@ -10,11 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/datatable', function () {
-    return view('datatable');
-});
+Route::get('/', 'AuthController@ReadLoginPage')->name('login.read');
+Route::get('/home', 'HomeController@ReadDashboard')->name('home');
+Route::get('/datatable', 'DataController@ReadDataTable')->name('datatable.read');
+Route::get('/datagrafik', 'DataController@ReadDataGrafik')->name('datagrafik.read');
+Route::get('/datamaps', 'DataController@ReadDataMaps')->name('datamaps.read');

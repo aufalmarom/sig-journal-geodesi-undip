@@ -4,7 +4,7 @@
     <div class="page-inner py-5">
         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
             <div>
-                <h2 class="text-white pb-2 fw-bold">Data Table</h2>
+                <h2 class="text-white pb-2 fw-bold">Data</h2>
                 <h5 class="text-white op-7 mb-2">Sistem Informasi Geografis Jurnal Geodesi</h5>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="card">
                 <div class="card-header">
                     <div class="d-flex align-items-center">
-                        <h4 class="card-title">Multi Filter Select</h4>
+                        <h4 class="card-title">Data Table</h4>
                         <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#addRowModal">
                             <i class="fa fa-plus"></i>
                             Add Data
