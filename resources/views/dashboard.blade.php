@@ -132,7 +132,7 @@
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="{{route('datatable.read')}}">
-											<span class="sub-item">Tabel</span>
+											<span class="sub-item">Table</span>
 										</a>
 									</li>
 									<li>

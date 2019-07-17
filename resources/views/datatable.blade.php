@@ -72,9 +72,10 @@
                         </div>
                     </div>
                     <div class="table-responsive">
-                        <table id="multi-filter-select" class="display table table-striped table-hover" >
+                        <table id="multi-filter-select" class="display table table-striped table-hover">
                             <thead>
                                 <tr>
+                                    <th>No</td>
                                     <th>Name</th>
                                     <th>Title</th>
                                     <th>Location</th>
@@ -84,6 +85,7 @@
                             </thead>
                             <tfoot>
                                 <tr>
+                                    <th></th>
                                     <th>Name</th>
                                     <th>Title</th>
                                     <th>Location</th>
@@ -92,9 +94,13 @@
                                 </tr>
                             </tfoot>
                             <tbody>
+                                @php
+                                    $no = 1;
+                                @endphp
                                 @foreach ($datas as $data)
                                     
                                 <tr>
+                                    <td>{{$no++}}</td>
                                     <td>{{$data->nama}}</td>
                                     <td>{{$data->title}}</td>
                                     <td>{{$data->location}}</td>
