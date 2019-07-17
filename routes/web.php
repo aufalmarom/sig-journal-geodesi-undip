@@ -15,3 +15,7 @@ Route::get('/home', 'HomeController@ReadDashboard')->name('home');
 Route::get('/datatable', 'DataController@ReadDataTable')->name('datatable.read');
 Route::get('/datagrafik', 'DataController@ReadDataGrafik')->name('datagrafik.read');
 Route::get('/datamaps', 'DataController@ReadDataMaps')->name('datamaps.read');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

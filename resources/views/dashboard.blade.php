@@ -61,16 +61,14 @@
 										<div class="user-box">
 											<div class="avatar-lg"><img src="{{asset('assets/img/aufal.jpg')}}" alt="image profile" class="avatar-img rounded"></div>
 											<div class="u-text">
-												<h4>Anak Gembala</h4>
-												<p class="text-muted">hello@example.com</p><a href="#" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+												<h4>{{Auth::user()->name}}</h4>
+												<p class="text-muted">{{ Auth::user()->email}}</p>
+												<form action="{{route('logout')}}" method="post">
+													@csrf
+													<button class="btn btn-xs btn-secondary btn-sm" type="submit">Logout</button>
+												</form>
 											</div>
 										</div>
-									</li>
-									<li>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="#">Account Setting</a>
-										<div class="dropdown-divider"></div>
-										<a class="dropdown-item" href="{{route('login.read')}}">Logout</a>
 									</li>
 								</div>
 							</ul>
@@ -92,8 +90,8 @@
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Anak Gembala
-									<span class="user-level">Administrator</span>
+									{{Auth::user()->name}}
+									<span class="user-level">{{Auth::user()->email}}</span>
 									<span class="caret"></span>
 								</span>
 							</a>
@@ -101,15 +99,11 @@
 
 							<div class="collapse in" id="collapseExample">
 								<ul class="nav">
-									<li>
-										<a href="#">
-											<span class="link-collapse">My Profile</span>
-										</a>
-                                    </li>
                                     <li>
-										<a href="{{route('login.read')}}">
-											<span class="link-collapse">Logout</span>
-										</a>
+										<form action="{{route('logout')}}" method="post">
+											@csrf
+											<button class="btn btn-xs btn-secondary btn-sm" type="submit">Logout</button>
+										</form>
 									</li>
 								</ul>
 							</div>
@@ -143,7 +137,7 @@
 									</li>
 									<li>
 										<a href="{{route('datagrafik.read')}}">
-											<span class="sub-item">Grafik</span>
+											<span class="sub-item">Graph</span>
 										</a>
 									</li>
 									<li>
@@ -153,6 +147,12 @@
 									</li>
 								</ul>
 							</div>
+						</li>
+						<li class="nav-section">
+							<span class="sidebar-mini-icon">
+								<i class="fa fa-ellipsis-h"></i>
+							</span>
+							<h4 class="text-section"><a href="https://ejournal3.undip.ac.id/index.php/geodesi/issue/archive">About Us</a></h4>
 						</li>
 					</ul>
 				</div>
