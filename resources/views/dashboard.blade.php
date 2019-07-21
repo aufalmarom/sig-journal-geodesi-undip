@@ -162,7 +162,7 @@
 
 		<div class="main-panel">
 			<div class="content">
-				@yield('content');
+				@yield('content')
 			</div>
 			
 			<footer class="footer">
