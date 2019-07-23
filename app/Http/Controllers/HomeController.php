@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Journals;
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+        $datas_location = DB::table('journals')
+            ->select(DB::raw('count(*) as jumlah_data, location'))
+            ->groupBy('location')
+            ->get();
+        return view('home', compact('datas_location'));
     }
 }
