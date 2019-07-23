@@ -25,11 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $datas_location = DB::table('journals')
             ->select(DB::raw('count(*) as jumlah_data, location'))
             ->groupBy('location')
             ->get();
-        return view('home', compact('datas_location'));
+
+        $datas_kk = DB::table('journals')
+            ->select(DB::raw('count(*) as jumlah_kk, jenis_kk'))
+            ->groupBy('jenis_kk')
+            ->get();
+        return view('home', compact('datas_location', 'datas_kk'));
     }
 }

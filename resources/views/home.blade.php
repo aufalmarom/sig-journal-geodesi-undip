@@ -32,6 +32,24 @@
     </div>
 </div>
 
+<div class="page-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">Pie Chart</div>
+                </div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="pieChart" style="width: 50%; height: 50%"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <div class="page-inner mt--5">
     <div class="row mt--2">
         <div class="col-md-12">
@@ -50,7 +68,55 @@
 </div>
 
 @section('script')
-    <script>
+    <script>    
+    var pieChart = document.getElementById('pieChart').getContext('2d');
+    var myPieChart = new Chart(pieChart, {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [<?php 
+                    foreach($datas_kk as $data){
+                        echo '"'.$data->jumlah_kk.'",';
+                    }
+                    ?>],
+                backgroundColor :['#c62828', '#AD1457', '#6A1B9A', '#4527A0', '#283593', '#1565C0', '#0277BD', '#00838F', '#00695C', '#2E7D32', '#558B2F', '#9E9D24'],
+                borderWidth: 0
+            }],
+            labels: [<?php 
+                    foreach($datas_kk as $data){
+                        echo '"'.$data->jenis_kk.'",';
+                    }
+                    ?>] 
+        },
+        options : {
+            responsive: true, 
+            maintainAspectRatio: false,
+            legend: {
+                position : 'bottom',
+                labels : {
+                    fontColor: 'rgb(154, 154, 154)',
+                    fontSize: 11,
+                    usePointStyle : true,
+                    padding: 20
+                }
+            },
+            pieceLabel: {
+                render: 'percentage',
+                fontColor: 'white',
+                fontSize: 14,
+            },
+            tooltips: false,
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20,
+                    top: 20,
+                    bottom: 20
+                }
+            }
+        }
+    })
+
     //Chart
 
     var ctx = document.getElementById('statisticsChart').getContext('2d');
@@ -63,11 +129,11 @@
             } ?>],
             datasets: [ {
                 label: "Data Journals",
-                borderColor: '#f3545d',
+                borderColor: '#177dff',
                 pointBackgroundColor: 'rgba(243, 84, 93, 0.6)',
                 pointRadius: 0,
                 backgroundColor: 'rgba(243, 84, 93, 0.4)',
-                legendColor: '#f3545d',
+                legendColor: '#177dff',
                 fill: true,
                 borderWidth: 2,
                 data: [<?php foreach($datas_location as $data){
@@ -98,23 +164,27 @@
                     ticks: {
                         fontStyle: "500",
                         beginAtZero: false,
-                        maxTicksLimit: 20,
+                        maxTicksLimit: 133,
                         padding: 10
                     },
                     gridLines: {
-                        drawTicks: true,
-                        display: true
+                        color: "rgb(234, 236, 244)",
+                        zeroLineColor: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                        borderDash: [2],
+                        zeroLineBorderDash: [2]
                     }
                 }],
                 xAxes: [{
                     gridLines: {
+                        display: false,
+                        drawBorder: false,
                         zeroLineColor: "transparent"
                     },
                     ticks: {
-                        padding: 1,
-                        fontStyle: "10",
-                        maxTicksLimit: 130
-                    }
+                        maxTicksLimit: 133
+                    },
+                    maxBarThickness: 25,
                 }]
             }, 
             legendCallback: function(chart) { 
