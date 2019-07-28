@@ -56,6 +56,26 @@
                     <p class="small">{{$data->tahun}}</p>
                     <br>
 
+                    <h5>Data</h5>
+                    <p class="small">{{$data->data}}</p>
+                    <br>
+
+                    <h5>Metode</h5>
+                    <p class="small">{{$data->metode}}</p>
+                    <br>
+
+                    <h5>Hasil</h5>
+                    <p class="small">{{$data->hasil}}</p>
+                    <br>
+
+                    <h5>Kesimpulan</h5>
+                    <p class="small">{{$data->kesimpulan}}</p>
+                    <br>
+
+                    <h5>Saran</h5>
+                    <p class="small">{{$data->saran}}</p>
+                    <br>
+
                     <h5>Download File</h5><a href="{{$data->download}}" target="_blank"><button type="button" data-toggle="tooltip" title="" class="btn btn-primary btn-sm" data-original-title="Download">
                             <i class="fa fa-download"></i>
                     </button></a>

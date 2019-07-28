@@ -36,6 +36,11 @@ class DataController extends Controller
         $data->kode_nasional = $request->kode_nasional;
         $data->jenis_kk = $request->jenis_kk;
         $data->tahun = $request->tahun;
+        $data->data = $request->data;
+        $data->metode = $request->metode;
+        $data->hasil = $request->hasil;
+        $data->kesimpulan = $request->kesimpulan;
+        $data->saran = $request->saran;
         $data->download = $request->download;
         $data->save();
 
@@ -61,6 +66,11 @@ class DataController extends Controller
         $data->kode_nasional = $request->kode_nasional;
         $data->jenis_kk = $request->jenis_kk;
         $data->tahun = $request->tahun;
+        $data->data = $request->data;
+        $data->metode = $request->metode;
+        $data->hasil = $request->hasil;
+        $data->kesimpulan = $request->kesimpulan;
+        $data->saran = $request->saran;
         $data->download = $request->download;
         $data->save();
 

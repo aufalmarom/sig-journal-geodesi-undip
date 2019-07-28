@@ -79,6 +79,36 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group form-group-default">
+                                        <label>Data</label>
+                                        <textarea name="data" rows="4" class="form-control" placeholder="fill data">{{$data->data}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-group-default">
+                                        <label>Metode</label>
+                                        <input name="metode" type="text" class="form-control" placeholder="fill metode" value="{{$data->metode}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-group-default">
+                                        <label>Hasil</label>
+                                        <input name="hasil" type="text" class="form-control" placeholder="fill hasil" value="{{$data->hasil}}">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-group-default">
+                                        <label>Kesimpulan</label>
+                                        <textarea name="kesimpulan" rows="4" class="form-control" placeholder="fill kesimpulan">{{$data->kesimpulan}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-group-default">
+                                        <label>Saran</label>
+                                        <textarea name="saran" rows="4" class="form-control" placeholder="fill saran">{{$data->saran}}</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group form-group-default">
                                         <label>Link Download</label>
                                         <input name="download" type="text" class="form-control" placeholder="fill link download" value="{{$data->download}}">
                                     </div>
